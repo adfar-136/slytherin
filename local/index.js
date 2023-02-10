@@ -1,0 +1,5 @@
+const a = require("./arithmetic")
+const result = a.add(567,6)
+const result1 = a.mul(567,6)
+console.log(result)
+console.log(result1)
