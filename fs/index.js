@@ -1,7 +1,7 @@
 const fs = require("fs")
 // // fs.writeFileSync("adfar.js","var a= 10 \n adfar")
 // // fs.appendFileSync("index.js","var b =10 \n console.log(b)")
-// const data = fs.readFileSync("adfar.txt")
+// const data = fs.readFileSync("adfar.txt","utf-8")
 // const string_data = data.toLocaleString()
 // console.log(string_data)
 // fs.renameSync("adfar.txt","index.txt")
