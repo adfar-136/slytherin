@@ -2,10 +2,34 @@ var express = require("express")
 const app = express()
 // app.anyMethod(path,function)
 // app.use(path,express.static(root,[options]))
-const path = require("path")
-const staticPath = path.join(__dirname,"./public")
+// const path = require("path")
+// const staticPath = path.join(__dirname,"./public")
 // app.use('/about',express.static("./public/index.html"))
-app.use(express.static(staticPath))
+// app.use(express.static(staticPath))
+// app.set("view engine","ejs")
+app.set("view engine","hbs")
+app.get("/",(req,res)=>{
+    res.render("kuchbhi")
+})
+app.get("/adfar",(req,res)=>{
+    var projects = {
+        name : "Adfar",
+        age : 26,
+        skill : ["HTML","CSS","JS","React"],
+        
+    }
+    res.render("adfar",{
+        projects:projects
+    })
+})
+app.get("/skill",(req,res)=>{
+    var projects = {
+        name : "Adfar",
+        age : 26,
+        skill : ["HTML","CSS","JS","React"],  
+    }
+    res.render("Skill",{projects:projects})
+})
 app.get("/",(req,res)=>{
     res.send("Welcome to Express")
 })
