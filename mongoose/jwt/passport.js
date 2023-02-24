@@ -6,13 +6,13 @@ var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = 'secret';
 passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
-    userModel.findOne({id: jwt_payload.id},function(err, user) {
-        console.log(jwt_payload)
+    userModel.findOne({username: jwt_payload.username},function(err, user) {
+        console.log(jwt_payload.username)
         if (err) {
             return done(err, false);
         }
         if (user) {
-            console.log(user)
+            console.log(user.username)
             return done(null, user);
         } else {
             return done(null, false);
